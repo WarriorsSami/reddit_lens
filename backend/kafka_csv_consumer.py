@@ -19,16 +19,16 @@ consumer = KafkaConsumer(
 
 reddit_data = open('reddit_users.csv', 'a')
 csv_writer = csv.writer(reddit_data)
-count = 0
+count = reddit_data.tell()
 
 for message in consumer:
     message = message.value
     print(f"Consumed comment: {message['author']}")
 
-    if count == 0 and len(reddit_data.readlines()) == 0:
+    if count == 0:
         header = message.keys()
         csv_writer.writerow(header)
-        count += 1
+        count = reddit_data.tell()
     csv_writer.writerow(message.values())
 
 reddit_data.close()

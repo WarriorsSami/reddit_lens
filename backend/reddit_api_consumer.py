@@ -43,6 +43,7 @@ class RedditAPIConsumer(Consumer):
 
             return user_profile.json()
         except Exception as e:
+            print(e)
             return Exception(e)
 
     @get("/user/{username}/comments.json")
@@ -59,6 +60,7 @@ class RedditAPIConsumer(Consumer):
 
             return comments
         except Exception as e:
+            print(e)
             return Exception(e)
 
     @get("/r/{subreddit}/comments.json?limit={limit}")
@@ -91,6 +93,7 @@ class RedditAPIConsumer(Consumer):
 
             return comments
         except Exception as e:
+            print(e)
             return Exception(e)
 
     @get("/user/{username}/comments.json?limit={limit}")
@@ -117,6 +120,7 @@ class RedditAPIConsumer(Consumer):
                                for comment in comments[previous_to:previous_to + int(limit)]]
             return recent_comments
         except Exception as e:
+            print(e)
             return Exception(e)
 
 

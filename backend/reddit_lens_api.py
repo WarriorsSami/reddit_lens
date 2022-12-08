@@ -11,11 +11,11 @@ def start_server():
     try:
         # run kafka producer in separate process
         subreddit = request.json["subreddit"]
-        kp_process = NewProcess(["python3", "kafka-cluster/kafka_producer.py", "--subreddit", subreddit])
-        pids_by_subreddit[subreddit].append(kp_process.pid)
-
         if subreddit not in pids_by_subreddit.keys():
             pids_by_subreddit[subreddit] = []
+
+        kp_process = NewProcess(["python3", "kafka-cluster/kafka_producer.py", "--subreddit", subreddit])
+        pids_by_subreddit[subreddit].append(kp_process.pid)
 
         is_training_session = bool(request.json["is_training_session"])
         if is_training_session:

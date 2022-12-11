@@ -17,7 +17,7 @@ def _format_comment(profile, comment):
         "author_verified": profile["verified"],
         "author_comment_karma": profile["comment_karma"],
         "author_link_karma": profile["link_karma"],
-        "num_comments": comment["num_comments"],
+        "num_comments": comment["num_comments"] if "num_comments" in comment else 0,
         "created_utc": comment["created_utc"],
         "score": comment["score"],
         "over_18": comment["over_18"],

@@ -4,15 +4,13 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:reddit_lens/domain/subreddits/i_subreddit_repository.dart';
 import 'package:reddit_lens/domain/subreddits/subreddit_entity.dart';
-import 'package:reddit_lens/domain/core/application_exception.dart';
+import 'package:reddit_lens/domain/core/application_failure.dart';
 
 import '../core/db/database.dart';
 
 @Injectable(as: ISubredditRepository)
 class SubredditRepository implements ISubredditRepository {
-  final AppDb _appDb;
-
-  SubredditRepository(this._appDb);
+  final AppDb _appDb = AppDb();
 
   @override
   Future<Unit> create(SubredditEntity entity) {
@@ -44,25 +42,24 @@ class SubredditRepository implements ISubredditRepository {
   }
 
   @override
-  Stream<Either<ApplicationException, KtList<SubredditEntity>>> watchAll() {
+  Stream<Either<ApplicationFailure, KtList<SubredditEntity>>> watchAll() {
     return _appDb
         .select(_appDb.subreddits)
         .watch()
         .map(
-          (rows) => right<ApplicationException, KtList<SubredditEntity>>(
+          (rows) => right<ApplicationFailure, KtList<SubredditEntity>>(
             rows
                 .map((row) => SubredditEntity.fromSubreddit(row))
                 .toImmutableList(),
           ),
         )
         .handleError((error) {
-      return left(
-          ApplicationException.infrastructureException(error.toString()));
+      return left(ApplicationFailure.infrastructureFailure(error.toString()));
     });
   }
 
   @override
-  Stream<Either<ApplicationException, KtList<SubredditEntity>>> watchByName(
+  Stream<Either<ApplicationFailure, KtList<SubredditEntity>>> watchByName(
       String name) {
     final MultiSelectable<Subreddit> query = _appDb.select(_appDb.subreddits)
       ..where((subreddit) => subreddit.name.contains(name));
@@ -70,15 +67,14 @@ class SubredditRepository implements ISubredditRepository {
     return query
         .watch()
         .map(
-          (rows) => right<ApplicationException, KtList<SubredditEntity>>(
+          (rows) => right<ApplicationFailure, KtList<SubredditEntity>>(
             rows
                 .map((row) => SubredditEntity.fromSubreddit(row))
                 .toImmutableList(),
           ),
         )
         .handleError((error) {
-      return left(
-          ApplicationException.infrastructureException(error.toString()));
+      return left(ApplicationFailure.infrastructureFailure(error.toString()));
     });
   }
 }

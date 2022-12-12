@@ -11,10 +11,10 @@ class SubredditsOverviewState with _$SubredditsOverviewState {
   ) = _LoadSuccess;
 
   const factory SubredditsOverviewState.loadFailure(
-    ApplicationException subredditFailure,
+    ApplicationFailure subredditFailure,
   ) = _LoadFailure;
 
-  const factory SubredditsOverviewState.redirectToSubredditDashboard(
+  const factory SubredditsOverviewState.loadServer(
     String subreddit,
-  ) = _RedirectToSubredditDashboard;
+  ) = _LoadServer;
 }

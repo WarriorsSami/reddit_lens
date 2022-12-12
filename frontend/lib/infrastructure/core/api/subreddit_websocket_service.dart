@@ -1,13 +1,19 @@
 import 'dart:convert';
 
+import 'package:injectable/injectable.dart';
 import 'package:reddit_lens/domain/comments/comment_entity.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-class SubredditWebsocketService {
-  Stream<CommentEntity> getSubredditPosts() {
-    final webSocket = WebSocketChannel.connect(Uri.parse('ws://10.0.2.2:8080'));
+import '../../../domain/core/i_subreddit_websocket_service.dart';
+import '../config.dart';
 
-    return webSocket.stream
+@Injectable(as: ISubredditWebsocketService)
+class SubredditWebsocketService implements ISubredditWebsocketService {
+  final _webSocket = WebSocketChannel.connect(Uri.parse(Config.wsBaseUrl));
+
+  @override
+  Stream<CommentEntity> getSubredditPosts() {
+    return _webSocket.stream
         .map((event) => CommentEntity.fromJson(jsonDecode(event)));
   }
 }

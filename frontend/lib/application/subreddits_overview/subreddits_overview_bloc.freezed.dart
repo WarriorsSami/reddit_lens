@@ -858,9 +858,8 @@ mixin _$SubredditsOverviewState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<SubredditEntity> subreddits) loadSuccess,
-    required TResult Function(ApplicationException subredditFailure)
-        loadFailure,
-    required TResult Function(String subreddit) redirectToSubredditDashboard,
+    required TResult Function(ApplicationFailure subredditFailure) loadFailure,
+    required TResult Function(String subreddit) loadServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -868,8 +867,8 @@ mixin _$SubredditsOverviewState {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult? Function(ApplicationException subredditFailure)? loadFailure,
-    TResult? Function(String subreddit)? redirectToSubredditDashboard,
+    TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult? Function(String subreddit)? loadServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -877,8 +876,8 @@ mixin _$SubredditsOverviewState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult Function(ApplicationException subredditFailure)? loadFailure,
-    TResult Function(String subreddit)? redirectToSubredditDashboard,
+    TResult Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult Function(String subreddit)? loadServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -888,8 +887,7 @@ mixin _$SubredditsOverviewState {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_RedirectToSubredditDashboard value)
-        redirectToSubredditDashboard,
+    required TResult Function(_LoadServer value) loadServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -898,8 +896,7 @@ mixin _$SubredditsOverviewState {
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult? Function(_LoadServer value)? loadServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -908,8 +905,7 @@ mixin _$SubredditsOverviewState {
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult Function(_LoadServer value)? loadServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -974,9 +970,8 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<SubredditEntity> subreddits) loadSuccess,
-    required TResult Function(ApplicationException subredditFailure)
-        loadFailure,
-    required TResult Function(String subreddit) redirectToSubredditDashboard,
+    required TResult Function(ApplicationFailure subredditFailure) loadFailure,
+    required TResult Function(String subreddit) loadServer,
   }) {
     return initial();
   }
@@ -987,8 +982,8 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult? Function(ApplicationException subredditFailure)? loadFailure,
-    TResult? Function(String subreddit)? redirectToSubredditDashboard,
+    TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult? Function(String subreddit)? loadServer,
   }) {
     return initial?.call();
   }
@@ -999,8 +994,8 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult Function(ApplicationException subredditFailure)? loadFailure,
-    TResult Function(String subreddit)? redirectToSubredditDashboard,
+    TResult Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult Function(String subreddit)? loadServer,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1016,8 +1011,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_RedirectToSubredditDashboard value)
-        redirectToSubredditDashboard,
+    required TResult Function(_LoadServer value) loadServer,
   }) {
     return initial(this);
   }
@@ -1029,8 +1023,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult? Function(_LoadServer value)? loadServer,
   }) {
     return initial?.call(this);
   }
@@ -1042,8 +1035,7 @@ class _$_Initial implements _Initial {
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult Function(_LoadServer value)? loadServer,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1098,9 +1090,8 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<SubredditEntity> subreddits) loadSuccess,
-    required TResult Function(ApplicationException subredditFailure)
-        loadFailure,
-    required TResult Function(String subreddit) redirectToSubredditDashboard,
+    required TResult Function(ApplicationFailure subredditFailure) loadFailure,
+    required TResult Function(String subreddit) loadServer,
   }) {
     return loadInProgress();
   }
@@ -1111,8 +1102,8 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult? Function(ApplicationException subredditFailure)? loadFailure,
-    TResult? Function(String subreddit)? redirectToSubredditDashboard,
+    TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult? Function(String subreddit)? loadServer,
   }) {
     return loadInProgress?.call();
   }
@@ -1123,8 +1114,8 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult Function(ApplicationException subredditFailure)? loadFailure,
-    TResult Function(String subreddit)? redirectToSubredditDashboard,
+    TResult Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult Function(String subreddit)? loadServer,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -1140,8 +1131,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_RedirectToSubredditDashboard value)
-        redirectToSubredditDashboard,
+    required TResult Function(_LoadServer value) loadServer,
   }) {
     return loadInProgress(this);
   }
@@ -1153,8 +1143,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult? Function(_LoadServer value)? loadServer,
   }) {
     return loadInProgress?.call(this);
   }
@@ -1166,8 +1155,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult Function(_LoadServer value)? loadServer,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -1249,9 +1237,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<SubredditEntity> subreddits) loadSuccess,
-    required TResult Function(ApplicationException subredditFailure)
-        loadFailure,
-    required TResult Function(String subreddit) redirectToSubredditDashboard,
+    required TResult Function(ApplicationFailure subredditFailure) loadFailure,
+    required TResult Function(String subreddit) loadServer,
   }) {
     return loadSuccess(subreddits);
   }
@@ -1262,8 +1249,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult? Function(ApplicationException subredditFailure)? loadFailure,
-    TResult? Function(String subreddit)? redirectToSubredditDashboard,
+    TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult? Function(String subreddit)? loadServer,
   }) {
     return loadSuccess?.call(subreddits);
   }
@@ -1274,8 +1261,8 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult Function(ApplicationException subredditFailure)? loadFailure,
-    TResult Function(String subreddit)? redirectToSubredditDashboard,
+    TResult Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult Function(String subreddit)? loadServer,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -1291,8 +1278,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_RedirectToSubredditDashboard value)
-        redirectToSubredditDashboard,
+    required TResult Function(_LoadServer value) loadServer,
   }) {
     return loadSuccess(this);
   }
@@ -1304,8 +1290,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult? Function(_LoadServer value)? loadServer,
   }) {
     return loadSuccess?.call(this);
   }
@@ -1317,8 +1302,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult Function(_LoadServer value)? loadServer,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -1344,9 +1328,9 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
           _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
       __$$_LoadFailureCopyWithImpl<$Res>;
   @useResult
-  $Res call({ApplicationException subredditFailure});
+  $Res call({ApplicationFailure subredditFailure});
 
-  $ApplicationExceptionCopyWith<$Res> get subredditFailure;
+  $ApplicationFailureCopyWith<$Res> get subredditFailure;
 }
 
 /// @nodoc
@@ -1366,15 +1350,14 @@ class __$$_LoadFailureCopyWithImpl<$Res>
       null == subredditFailure
           ? _value.subredditFailure
           : subredditFailure // ignore: cast_nullable_to_non_nullable
-              as ApplicationException,
+              as ApplicationFailure,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ApplicationExceptionCopyWith<$Res> get subredditFailure {
-    return $ApplicationExceptionCopyWith<$Res>(_value.subredditFailure,
-        (value) {
+  $ApplicationFailureCopyWith<$Res> get subredditFailure {
+    return $ApplicationFailureCopyWith<$Res>(_value.subredditFailure, (value) {
       return _then(_value.copyWith(subredditFailure: value));
     });
   }
@@ -1386,7 +1369,7 @@ class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.subredditFailure);
 
   @override
-  final ApplicationException subredditFailure;
+  final ApplicationFailure subredditFailure;
 
   @override
   String toString() {
@@ -1417,9 +1400,8 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<SubredditEntity> subreddits) loadSuccess,
-    required TResult Function(ApplicationException subredditFailure)
-        loadFailure,
-    required TResult Function(String subreddit) redirectToSubredditDashboard,
+    required TResult Function(ApplicationFailure subredditFailure) loadFailure,
+    required TResult Function(String subreddit) loadServer,
   }) {
     return loadFailure(subredditFailure);
   }
@@ -1430,8 +1412,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult? Function(ApplicationException subredditFailure)? loadFailure,
-    TResult? Function(String subreddit)? redirectToSubredditDashboard,
+    TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult? Function(String subreddit)? loadServer,
   }) {
     return loadFailure?.call(subredditFailure);
   }
@@ -1442,8 +1424,8 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult Function(ApplicationException subredditFailure)? loadFailure,
-    TResult Function(String subreddit)? redirectToSubredditDashboard,
+    TResult Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult Function(String subreddit)? loadServer,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -1459,8 +1441,7 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_RedirectToSubredditDashboard value)
-        redirectToSubredditDashboard,
+    required TResult Function(_LoadServer value) loadServer,
   }) {
     return loadFailure(this);
   }
@@ -1472,8 +1453,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult? Function(_LoadServer value)? loadServer,
   }) {
     return loadFailure?.call(this);
   }
@@ -1485,8 +1465,7 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult Function(_LoadServer value)? loadServer,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -1497,33 +1476,30 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements SubredditsOverviewState {
-  const factory _LoadFailure(final ApplicationException subredditFailure) =
+  const factory _LoadFailure(final ApplicationFailure subredditFailure) =
       _$_LoadFailure;
 
-  ApplicationException get subredditFailure;
+  ApplicationFailure get subredditFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_RedirectToSubredditDashboardCopyWith<$Res> {
-  factory _$$_RedirectToSubredditDashboardCopyWith(
-          _$_RedirectToSubredditDashboard value,
-          $Res Function(_$_RedirectToSubredditDashboard) then) =
-      __$$_RedirectToSubredditDashboardCopyWithImpl<$Res>;
+abstract class _$$_LoadServerCopyWith<$Res> {
+  factory _$$_LoadServerCopyWith(
+          _$_LoadServer value, $Res Function(_$_LoadServer) then) =
+      __$$_LoadServerCopyWithImpl<$Res>;
   @useResult
   $Res call({String subreddit});
 }
 
 /// @nodoc
-class __$$_RedirectToSubredditDashboardCopyWithImpl<$Res>
-    extends _$SubredditsOverviewStateCopyWithImpl<$Res,
-        _$_RedirectToSubredditDashboard>
-    implements _$$_RedirectToSubredditDashboardCopyWith<$Res> {
-  __$$_RedirectToSubredditDashboardCopyWithImpl(
-      _$_RedirectToSubredditDashboard _value,
-      $Res Function(_$_RedirectToSubredditDashboard) _then)
+class __$$_LoadServerCopyWithImpl<$Res>
+    extends _$SubredditsOverviewStateCopyWithImpl<$Res, _$_LoadServer>
+    implements _$$_LoadServerCopyWith<$Res> {
+  __$$_LoadServerCopyWithImpl(
+      _$_LoadServer _value, $Res Function(_$_LoadServer) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1531,7 +1507,7 @@ class __$$_RedirectToSubredditDashboardCopyWithImpl<$Res>
   $Res call({
     Object? subreddit = null,
   }) {
-    return _then(_$_RedirectToSubredditDashboard(
+    return _then(_$_LoadServer(
       null == subreddit
           ? _value.subreddit
           : subreddit // ignore: cast_nullable_to_non_nullable
@@ -1542,22 +1518,22 @@ class __$$_RedirectToSubredditDashboardCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
-  const _$_RedirectToSubredditDashboard(this.subreddit);
+class _$_LoadServer implements _LoadServer {
+  const _$_LoadServer(this.subreddit);
 
   @override
   final String subreddit;
 
   @override
   String toString() {
-    return 'SubredditsOverviewState.redirectToSubredditDashboard(subreddit: $subreddit)';
+    return 'SubredditsOverviewState.loadServer(subreddit: $subreddit)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RedirectToSubredditDashboard &&
+            other is _$_LoadServer &&
             (identical(other.subreddit, subreddit) ||
                 other.subreddit == subreddit));
   }
@@ -1568,9 +1544,8 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RedirectToSubredditDashboardCopyWith<_$_RedirectToSubredditDashboard>
-      get copyWith => __$$_RedirectToSubredditDashboardCopyWithImpl<
-          _$_RedirectToSubredditDashboard>(this, _$identity);
+  _$$_LoadServerCopyWith<_$_LoadServer> get copyWith =>
+      __$$_LoadServerCopyWithImpl<_$_LoadServer>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1578,11 +1553,10 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<SubredditEntity> subreddits) loadSuccess,
-    required TResult Function(ApplicationException subredditFailure)
-        loadFailure,
-    required TResult Function(String subreddit) redirectToSubredditDashboard,
+    required TResult Function(ApplicationFailure subredditFailure) loadFailure,
+    required TResult Function(String subreddit) loadServer,
   }) {
-    return redirectToSubredditDashboard(subreddit);
+    return loadServer(subreddit);
   }
 
   @override
@@ -1591,10 +1565,10 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult? Function(ApplicationException subredditFailure)? loadFailure,
-    TResult? Function(String subreddit)? redirectToSubredditDashboard,
+    TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult? Function(String subreddit)? loadServer,
   }) {
-    return redirectToSubredditDashboard?.call(subreddit);
+    return loadServer?.call(subreddit);
   }
 
   @override
@@ -1603,12 +1577,12 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<SubredditEntity> subreddits)? loadSuccess,
-    TResult Function(ApplicationException subredditFailure)? loadFailure,
-    TResult Function(String subreddit)? redirectToSubredditDashboard,
+    TResult Function(ApplicationFailure subredditFailure)? loadFailure,
+    TResult Function(String subreddit)? loadServer,
     required TResult orElse(),
   }) {
-    if (redirectToSubredditDashboard != null) {
-      return redirectToSubredditDashboard(subreddit);
+    if (loadServer != null) {
+      return loadServer(subreddit);
     }
     return orElse();
   }
@@ -1620,10 +1594,9 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_RedirectToSubredditDashboard value)
-        redirectToSubredditDashboard,
+    required TResult Function(_LoadServer value) loadServer,
   }) {
-    return redirectToSubredditDashboard(this);
+    return loadServer(this);
   }
 
   @override
@@ -1633,10 +1606,9 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
     TResult? Function(_LoadInProgress value)? loadInProgress,
     TResult? Function(_LoadSuccess value)? loadSuccess,
     TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult? Function(_LoadServer value)? loadServer,
   }) {
-    return redirectToSubredditDashboard?.call(this);
+    return loadServer?.call(this);
   }
 
   @override
@@ -1646,24 +1618,21 @@ class _$_RedirectToSubredditDashboard implements _RedirectToSubredditDashboard {
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(_LoadSuccess value)? loadSuccess,
     TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_RedirectToSubredditDashboard value)?
-        redirectToSubredditDashboard,
+    TResult Function(_LoadServer value)? loadServer,
     required TResult orElse(),
   }) {
-    if (redirectToSubredditDashboard != null) {
-      return redirectToSubredditDashboard(this);
+    if (loadServer != null) {
+      return loadServer(this);
     }
     return orElse();
   }
 }
 
-abstract class _RedirectToSubredditDashboard
-    implements SubredditsOverviewState {
-  const factory _RedirectToSubredditDashboard(final String subreddit) =
-      _$_RedirectToSubredditDashboard;
+abstract class _LoadServer implements SubredditsOverviewState {
+  const factory _LoadServer(final String subreddit) = _$_LoadServer;
 
   String get subreddit;
   @JsonKey(ignore: true)
-  _$$_RedirectToSubredditDashboardCopyWith<_$_RedirectToSubredditDashboard>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_LoadServerCopyWith<_$_LoadServer> get copyWith =>
+      throw _privateConstructorUsedError;
 }

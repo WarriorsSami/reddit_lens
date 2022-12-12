@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
-import 'package:reddit_lens/domain/core/application_exception.dart';
+import 'package:reddit_lens/domain/core/application_failure.dart';
 
 abstract class IRedditLensApiClient {
-  Future<Either<ApplicationException, Unit>> startSubredditServer(
+  Future<Either<ApplicationFailure, Unit>> startSubredditServer(
     String subreddit,
   );
 
-  Future<Either<ApplicationException, Unit>> stopSubredditServer(
+  Future<Either<ApplicationFailure, Unit>> stopSubredditServer(
     String subreddit,
   );
 }

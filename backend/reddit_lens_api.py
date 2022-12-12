@@ -34,8 +34,8 @@ def start_server_for_subreddit_in_training_session(subreddit):
 @app.route("/server/start", methods=["POST"])
 def start_server():
     try:
-        all_servers = bool(request.json["all_servers"])
-        if all_servers:
+        all_servers = request.json["all_servers"]
+        if all_servers == "true":
             for subreddit in list_of_subreddits:
                 start_server_for_subreddit_in_training_session(subreddit)
             return {"status": "All servers started in training session"}, 200
@@ -47,8 +47,8 @@ def start_server():
 
             start_producer_for_subreddit(subreddit)
 
-            is_training_session = bool(request.json["is_training_session"])
-            if is_training_session:
+            is_training_session = request.json["is_training_session"]
+            if is_training_session == "true":
                 # run kafka csv consumer in separate process
                 start_csv_consumer_for_subreddit(subreddit)
             else:
@@ -64,8 +64,8 @@ def start_server():
 @app.route("/server/stop", methods=["POST"])
 def stop_server():
     try:
-        stop_all = bool(request.json["all_servers"])
-        if stop_all:
+        stop_all = request.json["all_servers"]
+        if stop_all == "true":
             for subreddit in pids_by_subreddit.keys():
                 for pid in pids_by_subreddit[subreddit]:
                     NewProcess(["kill", str(pid)])

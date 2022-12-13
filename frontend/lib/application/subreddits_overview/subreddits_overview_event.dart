@@ -6,17 +6,11 @@ class SubredditsOverviewEvent with _$SubredditsOverviewEvent {
 
   const factory SubredditsOverviewEvent.subredditAdded(
     String subreddit,
-    Uint8List logo,
   ) = _SubredditAdded;
 
   const factory SubredditsOverviewEvent.subredditRemoved(
     String subreddit,
   ) = _SubredditRemoved;
-
-  const factory SubredditsOverviewEvent.subredditLogoUpdated(
-    String subreddit,
-    Uint8List logo,
-  ) = _SubredditLogoUpdated;
 
   const factory SubredditsOverviewEvent.subredditSelected(
     String subreddit,

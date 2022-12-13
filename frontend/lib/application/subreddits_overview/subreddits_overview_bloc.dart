@@ -46,7 +46,6 @@ class SubredditsOverviewBloc
           _subredditRepository.create(
             SubredditEntity(
               name: e.subreddit,
-              image: e.logo,
             ),
           );
           add(const SubredditsOverviewEvent.started());
@@ -56,16 +55,6 @@ class SubredditsOverviewBloc
           _subredditRepository.delete(
             SubredditEntity(
               name: e.subreddit,
-            ),
-          );
-          add(const SubredditsOverviewEvent.started());
-        },
-        subredditLogoUpdated: (e) {
-          emit(const SubredditsOverviewState.loadInProgress());
-          _subredditRepository.update(
-            SubredditEntity(
-              name: e.subreddit,
-              image: e.logo,
             ),
           );
           add(const SubredditsOverviewEvent.started());

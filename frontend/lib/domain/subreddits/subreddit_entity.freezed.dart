@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SubredditEntity {
   int? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  Uint8List? get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SubredditEntityCopyWith<SubredditEntity> get copyWith =>
@@ -31,7 +30,7 @@ abstract class $SubredditEntityCopyWith<$Res> {
           SubredditEntity value, $Res Function(SubredditEntity) then) =
       _$SubredditEntityCopyWithImpl<$Res, SubredditEntity>;
   @useResult
-  $Res call({int? id, String name, Uint8List? image});
+  $Res call({int? id, String name});
 }
 
 /// @nodoc
@@ -49,7 +48,6 @@ class _$SubredditEntityCopyWithImpl<$Res, $Val extends SubredditEntity>
   $Res call({
     Object? id = freezed,
     Object? name = null,
-    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -60,10 +58,6 @@ class _$SubredditEntityCopyWithImpl<$Res, $Val extends SubredditEntity>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
     ) as $Val);
   }
 }
@@ -76,7 +70,7 @@ abstract class _$$_SubredditEntityCopyWith<$Res>
       __$$_SubredditEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String name, Uint8List? image});
+  $Res call({int? id, String name});
 }
 
 /// @nodoc
@@ -92,7 +86,6 @@ class __$$_SubredditEntityCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = null,
-    Object? image = freezed,
   }) {
     return _then(_$_SubredditEntity(
       id: freezed == id
@@ -103,10 +96,6 @@ class __$$_SubredditEntityCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
     ));
   }
 }
@@ -114,18 +103,16 @@ class __$$_SubredditEntityCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SubredditEntity implements _SubredditEntity {
-  _$_SubredditEntity({this.id, required this.name, this.image});
+  _$_SubredditEntity({this.id, required this.name});
 
   @override
   final int? id;
   @override
   final String name;
-  @override
-  final Uint8List? image;
 
   @override
   String toString() {
-    return 'SubredditEntity(id: $id, name: $name, image: $image)';
+    return 'SubredditEntity(id: $id, name: $name)';
   }
 
   @override
@@ -134,13 +121,11 @@ class _$_SubredditEntity implements _SubredditEntity {
         (other.runtimeType == runtimeType &&
             other is _$_SubredditEntity &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, const DeepCollectionEquality().hash(image));
+  int get hashCode => Object.hash(runtimeType, id, name);
 
   @JsonKey(ignore: true)
   @override
@@ -150,17 +135,13 @@ class _$_SubredditEntity implements _SubredditEntity {
 }
 
 abstract class _SubredditEntity implements SubredditEntity {
-  factory _SubredditEntity(
-      {final int? id,
-      required final String name,
-      final Uint8List? image}) = _$_SubredditEntity;
+  factory _SubredditEntity({final int? id, required final String name}) =
+      _$_SubredditEntity;
 
   @override
   int? get id;
   @override
   String get name;
-  @override
-  Uint8List? get image;
   @override
   @JsonKey(ignore: true)
   _$$_SubredditEntityCopyWith<_$_SubredditEntity> get copyWith =>

@@ -16,7 +16,6 @@ class SubredditRepository implements ISubredditRepository {
   Future<Unit> create(SubredditEntity entity) {
     final SubredditsCompanion entry = SubredditsCompanion.insert(
       name: entity.name,
-      image: Value(entity.image),
     );
     return _appDb.subreddits.insertOne(entry).then((_) => unit);
   }
@@ -26,7 +25,6 @@ class SubredditRepository implements ISubredditRepository {
     final SubredditsCompanion entry = SubredditsCompanion(
       id: Value(entity.id!),
       name: Value(entity.name),
-      image: Value(entity.image),
     );
     return _appDb.subreddits.deleteOne(entry).then((_) => unit);
   }
@@ -36,7 +34,6 @@ class SubredditRepository implements ISubredditRepository {
     final SubredditsCompanion entry = SubredditsCompanion(
       id: Value(entity.id!),
       name: Value(entity.name),
-      image: Value(entity.image),
     );
     return _appDb.update(_appDb.subreddits).replace(entry).then((_) => unit);
   }

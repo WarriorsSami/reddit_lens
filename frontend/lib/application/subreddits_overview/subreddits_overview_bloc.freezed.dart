@@ -19,28 +19,24 @@ mixin _$SubredditsOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String subreddit, Uint8List logo) subredditAdded,
+    required TResult Function(String subreddit) subredditAdded,
     required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit, Uint8List logo)
-        subredditLogoUpdated,
     required TResult Function(String subreddit) subredditSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult? Function(String subreddit)? subredditAdded,
     TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult? Function(String subreddit)? subredditSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult Function(String subreddit)? subredditAdded,
     TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult Function(String subreddit)? subredditSelected,
     required TResult orElse(),
   }) =>
@@ -50,7 +46,6 @@ mixin _$SubredditsOverviewEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_SubredditAdded value) subredditAdded,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditLogoUpdated value) subredditLogoUpdated,
     required TResult Function(_SubredditSelected value) subredditSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,7 +54,6 @@ mixin _$SubredditsOverviewEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_SubredditAdded value)? subredditAdded,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult? Function(_SubredditSelected value)? subredditSelected,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +62,6 @@ mixin _$SubredditsOverviewEvent {
     TResult Function(_Started value)? started,
     TResult Function(_SubredditAdded value)? subredditAdded,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult Function(_SubredditSelected value)? subredditSelected,
     required TResult orElse(),
   }) =>
@@ -132,10 +125,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String subreddit, Uint8List logo) subredditAdded,
+    required TResult Function(String subreddit) subredditAdded,
     required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit, Uint8List logo)
-        subredditLogoUpdated,
     required TResult Function(String subreddit) subredditSelected,
   }) {
     return started();
@@ -145,9 +136,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult? Function(String subreddit)? subredditAdded,
     TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult? Function(String subreddit)? subredditSelected,
   }) {
     return started?.call();
@@ -157,9 +147,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult Function(String subreddit)? subredditAdded,
     TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult Function(String subreddit)? subredditSelected,
     required TResult orElse(),
   }) {
@@ -175,7 +164,6 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_SubredditAdded value) subredditAdded,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditLogoUpdated value) subredditLogoUpdated,
     required TResult Function(_SubredditSelected value) subredditSelected,
   }) {
     return started(this);
@@ -187,7 +175,6 @@ class _$_Started implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_SubredditAdded value)? subredditAdded,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult? Function(_SubredditSelected value)? subredditSelected,
   }) {
     return started?.call(this);
@@ -199,7 +186,6 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_SubredditAdded value)? subredditAdded,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult Function(_SubredditSelected value)? subredditSelected,
     required TResult orElse(),
   }) {
@@ -220,7 +206,7 @@ abstract class _$$_SubredditAddedCopyWith<$Res> {
           _$_SubredditAdded value, $Res Function(_$_SubredditAdded) then) =
       __$$_SubredditAddedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String subreddit, Uint8List logo});
+  $Res call({String subreddit});
 }
 
 /// @nodoc
@@ -235,17 +221,12 @@ class __$$_SubredditAddedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? subreddit = null,
-    Object? logo = null,
   }) {
     return _then(_$_SubredditAdded(
       null == subreddit
           ? _value.subreddit
           : subreddit // ignore: cast_nullable_to_non_nullable
               as String,
-      null == logo
-          ? _value.logo
-          : logo // ignore: cast_nullable_to_non_nullable
-              as Uint8List,
     ));
   }
 }
@@ -253,16 +234,14 @@ class __$$_SubredditAddedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SubredditAdded implements _SubredditAdded {
-  const _$_SubredditAdded(this.subreddit, this.logo);
+  const _$_SubredditAdded(this.subreddit);
 
   @override
   final String subreddit;
-  @override
-  final Uint8List logo;
 
   @override
   String toString() {
-    return 'SubredditsOverviewEvent.subredditAdded(subreddit: $subreddit, logo: $logo)';
+    return 'SubredditsOverviewEvent.subredditAdded(subreddit: $subreddit)';
   }
 
   @override
@@ -271,13 +250,11 @@ class _$_SubredditAdded implements _SubredditAdded {
         (other.runtimeType == runtimeType &&
             other is _$_SubredditAdded &&
             (identical(other.subreddit, subreddit) ||
-                other.subreddit == subreddit) &&
-            const DeepCollectionEquality().equals(other.logo, logo));
+                other.subreddit == subreddit));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, subreddit, const DeepCollectionEquality().hash(logo));
+  int get hashCode => Object.hash(runtimeType, subreddit);
 
   @JsonKey(ignore: true)
   @override
@@ -289,39 +266,35 @@ class _$_SubredditAdded implements _SubredditAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String subreddit, Uint8List logo) subredditAdded,
+    required TResult Function(String subreddit) subredditAdded,
     required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit, Uint8List logo)
-        subredditLogoUpdated,
     required TResult Function(String subreddit) subredditSelected,
   }) {
-    return subredditAdded(subreddit, logo);
+    return subredditAdded(subreddit);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult? Function(String subreddit)? subredditAdded,
     TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult? Function(String subreddit)? subredditSelected,
   }) {
-    return subredditAdded?.call(subreddit, logo);
+    return subredditAdded?.call(subreddit);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult Function(String subreddit)? subredditAdded,
     TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult Function(String subreddit)? subredditSelected,
     required TResult orElse(),
   }) {
     if (subredditAdded != null) {
-      return subredditAdded(subreddit, logo);
+      return subredditAdded(subreddit);
     }
     return orElse();
   }
@@ -332,7 +305,6 @@ class _$_SubredditAdded implements _SubredditAdded {
     required TResult Function(_Started value) started,
     required TResult Function(_SubredditAdded value) subredditAdded,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditLogoUpdated value) subredditLogoUpdated,
     required TResult Function(_SubredditSelected value) subredditSelected,
   }) {
     return subredditAdded(this);
@@ -344,7 +316,6 @@ class _$_SubredditAdded implements _SubredditAdded {
     TResult? Function(_Started value)? started,
     TResult? Function(_SubredditAdded value)? subredditAdded,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult? Function(_SubredditSelected value)? subredditSelected,
   }) {
     return subredditAdded?.call(this);
@@ -356,7 +327,6 @@ class _$_SubredditAdded implements _SubredditAdded {
     TResult Function(_Started value)? started,
     TResult Function(_SubredditAdded value)? subredditAdded,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult Function(_SubredditSelected value)? subredditSelected,
     required TResult orElse(),
   }) {
@@ -368,11 +338,9 @@ class _$_SubredditAdded implements _SubredditAdded {
 }
 
 abstract class _SubredditAdded implements SubredditsOverviewEvent {
-  const factory _SubredditAdded(final String subreddit, final Uint8List logo) =
-      _$_SubredditAdded;
+  const factory _SubredditAdded(final String subreddit) = _$_SubredditAdded;
 
   String get subreddit;
-  Uint8List get logo;
   @JsonKey(ignore: true)
   _$$_SubredditAddedCopyWith<_$_SubredditAdded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -444,10 +412,8 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String subreddit, Uint8List logo) subredditAdded,
+    required TResult Function(String subreddit) subredditAdded,
     required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit, Uint8List logo)
-        subredditLogoUpdated,
     required TResult Function(String subreddit) subredditSelected,
   }) {
     return subredditRemoved(subreddit);
@@ -457,9 +423,8 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult? Function(String subreddit)? subredditAdded,
     TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult? Function(String subreddit)? subredditSelected,
   }) {
     return subredditRemoved?.call(subreddit);
@@ -469,9 +434,8 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult Function(String subreddit)? subredditAdded,
     TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult Function(String subreddit)? subredditSelected,
     required TResult orElse(),
   }) {
@@ -487,7 +451,6 @@ class _$_SubredditRemoved implements _SubredditRemoved {
     required TResult Function(_Started value) started,
     required TResult Function(_SubredditAdded value) subredditAdded,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditLogoUpdated value) subredditLogoUpdated,
     required TResult Function(_SubredditSelected value) subredditSelected,
   }) {
     return subredditRemoved(this);
@@ -499,7 +462,6 @@ class _$_SubredditRemoved implements _SubredditRemoved {
     TResult? Function(_Started value)? started,
     TResult? Function(_SubredditAdded value)? subredditAdded,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult? Function(_SubredditSelected value)? subredditSelected,
   }) {
     return subredditRemoved?.call(this);
@@ -511,7 +473,6 @@ class _$_SubredditRemoved implements _SubredditRemoved {
     TResult Function(_Started value)? started,
     TResult Function(_SubredditAdded value)? subredditAdded,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult Function(_SubredditSelected value)? subredditSelected,
     required TResult orElse(),
   }) {
@@ -528,171 +489,6 @@ abstract class _SubredditRemoved implements SubredditsOverviewEvent {
   String get subreddit;
   @JsonKey(ignore: true)
   _$$_SubredditRemovedCopyWith<_$_SubredditRemoved> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_SubredditLogoUpdatedCopyWith<$Res> {
-  factory _$$_SubredditLogoUpdatedCopyWith(_$_SubredditLogoUpdated value,
-          $Res Function(_$_SubredditLogoUpdated) then) =
-      __$$_SubredditLogoUpdatedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String subreddit, Uint8List logo});
-}
-
-/// @nodoc
-class __$$_SubredditLogoUpdatedCopyWithImpl<$Res>
-    extends _$SubredditsOverviewEventCopyWithImpl<$Res, _$_SubredditLogoUpdated>
-    implements _$$_SubredditLogoUpdatedCopyWith<$Res> {
-  __$$_SubredditLogoUpdatedCopyWithImpl(_$_SubredditLogoUpdated _value,
-      $Res Function(_$_SubredditLogoUpdated) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? subreddit = null,
-    Object? logo = null,
-  }) {
-    return _then(_$_SubredditLogoUpdated(
-      null == subreddit
-          ? _value.subreddit
-          : subreddit // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == logo
-          ? _value.logo
-          : logo // ignore: cast_nullable_to_non_nullable
-              as Uint8List,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SubredditLogoUpdated implements _SubredditLogoUpdated {
-  const _$_SubredditLogoUpdated(this.subreddit, this.logo);
-
-  @override
-  final String subreddit;
-  @override
-  final Uint8List logo;
-
-  @override
-  String toString() {
-    return 'SubredditsOverviewEvent.subredditLogoUpdated(subreddit: $subreddit, logo: $logo)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SubredditLogoUpdated &&
-            (identical(other.subreddit, subreddit) ||
-                other.subreddit == subreddit) &&
-            const DeepCollectionEquality().equals(other.logo, logo));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, subreddit, const DeepCollectionEquality().hash(logo));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_SubredditLogoUpdatedCopyWith<_$_SubredditLogoUpdated> get copyWith =>
-      __$$_SubredditLogoUpdatedCopyWithImpl<_$_SubredditLogoUpdated>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String subreddit, Uint8List logo) subredditAdded,
-    required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit, Uint8List logo)
-        subredditLogoUpdated,
-    required TResult Function(String subreddit) subredditSelected,
-  }) {
-    return subredditLogoUpdated(subreddit, logo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String subreddit, Uint8List logo)? subredditAdded,
-    TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
-    TResult? Function(String subreddit)? subredditSelected,
-  }) {
-    return subredditLogoUpdated?.call(subreddit, logo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String subreddit, Uint8List logo)? subredditAdded,
-    TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
-    TResult Function(String subreddit)? subredditSelected,
-    required TResult orElse(),
-  }) {
-    if (subredditLogoUpdated != null) {
-      return subredditLogoUpdated(subreddit, logo);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_SubredditAdded value) subredditAdded,
-    required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditLogoUpdated value) subredditLogoUpdated,
-    required TResult Function(_SubredditSelected value) subredditSelected,
-  }) {
-    return subredditLogoUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_SubredditAdded value)? subredditAdded,
-    TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
-    TResult? Function(_SubredditSelected value)? subredditSelected,
-  }) {
-    return subredditLogoUpdated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_SubredditAdded value)? subredditAdded,
-    TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
-    TResult Function(_SubredditSelected value)? subredditSelected,
-    required TResult orElse(),
-  }) {
-    if (subredditLogoUpdated != null) {
-      return subredditLogoUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SubredditLogoUpdated implements SubredditsOverviewEvent {
-  const factory _SubredditLogoUpdated(
-      final String subreddit, final Uint8List logo) = _$_SubredditLogoUpdated;
-
-  String get subreddit;
-  Uint8List get logo;
-  @JsonKey(ignore: true)
-  _$$_SubredditLogoUpdatedCopyWith<_$_SubredditLogoUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -763,10 +559,8 @@ class _$_SubredditSelected implements _SubredditSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String subreddit, Uint8List logo) subredditAdded,
+    required TResult Function(String subreddit) subredditAdded,
     required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit, Uint8List logo)
-        subredditLogoUpdated,
     required TResult Function(String subreddit) subredditSelected,
   }) {
     return subredditSelected(subreddit);
@@ -776,9 +570,8 @@ class _$_SubredditSelected implements _SubredditSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult? Function(String subreddit)? subredditAdded,
     TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult? Function(String subreddit)? subredditSelected,
   }) {
     return subredditSelected?.call(subreddit);
@@ -788,9 +581,8 @@ class _$_SubredditSelected implements _SubredditSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String subreddit, Uint8List logo)? subredditAdded,
+    TResult Function(String subreddit)? subredditAdded,
     TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit, Uint8List logo)? subredditLogoUpdated,
     TResult Function(String subreddit)? subredditSelected,
     required TResult orElse(),
   }) {
@@ -806,7 +598,6 @@ class _$_SubredditSelected implements _SubredditSelected {
     required TResult Function(_Started value) started,
     required TResult Function(_SubredditAdded value) subredditAdded,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditLogoUpdated value) subredditLogoUpdated,
     required TResult Function(_SubredditSelected value) subredditSelected,
   }) {
     return subredditSelected(this);
@@ -818,7 +609,6 @@ class _$_SubredditSelected implements _SubredditSelected {
     TResult? Function(_Started value)? started,
     TResult? Function(_SubredditAdded value)? subredditAdded,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult? Function(_SubredditSelected value)? subredditSelected,
   }) {
     return subredditSelected?.call(this);
@@ -830,7 +620,6 @@ class _$_SubredditSelected implements _SubredditSelected {
     TResult Function(_Started value)? started,
     TResult Function(_SubredditAdded value)? subredditAdded,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditLogoUpdated value)? subredditLogoUpdated,
     TResult Function(_SubredditSelected value)? subredditSelected,
     required TResult orElse(),
   }) {

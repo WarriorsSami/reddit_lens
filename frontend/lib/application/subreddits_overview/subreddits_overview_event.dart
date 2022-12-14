@@ -2,11 +2,8 @@ part of 'subreddits_overview_bloc.dart';
 
 @freezed
 class SubredditsOverviewEvent with _$SubredditsOverviewEvent {
-  const factory SubredditsOverviewEvent.started() = _Started;
-
-  const factory SubredditsOverviewEvent.subredditAdded(
-    String subreddit,
-  ) = _SubredditAdded;
+  const factory SubredditsOverviewEvent.subredditsRetrieved() =
+      _SubredditsRetrieved;
 
   const factory SubredditsOverviewEvent.subredditRemoved(
     String subreddit,
@@ -15,4 +12,8 @@ class SubredditsOverviewEvent with _$SubredditsOverviewEvent {
   const factory SubredditsOverviewEvent.subredditSelected(
     String subreddit,
   ) = _SubredditSelected;
+
+  const factory SubredditsOverviewEvent.subredditReceived(
+    Either<ApplicationFailure, KtList<SubredditEntity>> failureOrSubreddits,
+  ) = _SubredditReceived;
 }

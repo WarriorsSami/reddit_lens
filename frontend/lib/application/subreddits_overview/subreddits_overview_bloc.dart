@@ -1,5 +1,6 @@
-import 'dart:typed_data';
+import 'dart:async';
 
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
@@ -22,56 +23,61 @@ class SubredditsOverviewBloc
   final ISubredditRepository _subredditRepository;
   final IRedditLensApiClient _rlApiClient;
 
+  StreamSubscription<Either<ApplicationFailure, KtList<SubredditEntity>>>?
+      _subredditStreamSubscription;
+
   SubredditsOverviewBloc(
     this._subredditRepository,
     this._rlApiClient,
   ) : super(const SubredditsOverviewState.initial()) {
     on<SubredditsOverviewEvent>((event, emit) async {
       await event.map(
-        started: (e) async {
-          emit(const SubredditsOverviewState.loadInProgress());
-          _subredditRepository.watchAll().listen(
-                (failureOrSubreddits) => failureOrSubreddits.fold(
-                  (failure) => emit(
-                    SubredditsOverviewState.loadFailure(failure),
-                  ),
-                  (subreddits) => emit(
-                    SubredditsOverviewState.loadSuccess(subreddits),
+        subredditsRetrieved: (e) async {
+          await _subredditStreamSubscription?.cancel();
+          _subredditStreamSubscription = _subredditRepository.watchAll().listen(
+                (failureOrSubreddits) => add(
+                  SubredditsOverviewEvent.subredditReceived(
+                    failureOrSubreddits,
                   ),
                 ),
               );
         },
-        subredditAdded: (e) {
-          emit(const SubredditsOverviewState.loadInProgress());
-          _subredditRepository.create(
-            SubredditEntity(
-              name: e.subreddit,
+        subredditReceived: (e) async {
+          emit(
+            e.failureOrSubreddits.fold(
+              (f) => SubredditsOverviewState.loadFailure(f),
+              (subreddits) => SubredditsOverviewState.loadSuccess(subreddits),
             ),
           );
-          add(const SubredditsOverviewEvent.started());
         },
-        subredditRemoved: (e) {
+        subredditRemoved: (e) async {
           emit(const SubredditsOverviewState.loadInProgress());
-          _subredditRepository.delete(
+          (await _subredditRepository.delete(
             SubredditEntity(
               name: e.subreddit,
             ),
+          ))
+              .fold(
+            (f) => emit(SubredditsOverviewState.loadFailure(f)),
+            (_) => add(const SubredditsOverviewEvent.subredditsRetrieved()),
           );
-          add(const SubredditsOverviewEvent.started());
         },
         subredditSelected: (e) async {
           emit(const SubredditsOverviewState.loadInProgress());
           final response = await _rlApiClient.startSubredditServer(e.subreddit);
           response.fold(
-            (failure) => emit(
-              SubredditsOverviewState.loadFailure(failure),
-            ),
-            (server) => emit(
-              SubredditsOverviewState.loadServer(e.subreddit),
-            ),
+            (failure) => emit(SubredditsOverviewState.loadFailure(failure)),
+            (server) => emit(SubredditsOverviewState.loadServer(e.subreddit)),
           );
+          add(const SubredditsOverviewEvent.subredditsRetrieved());
         },
       );
     });
+  }
+
+  @override
+  Future<void> close() async {
+    await _subredditStreamSubscription?.cancel();
+    return super.close();
   }
 }

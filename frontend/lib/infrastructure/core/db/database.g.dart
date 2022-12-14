@@ -132,7 +132,8 @@ class $SubredditsTable extends Subreddits
       additionalChecks:
           GeneratedColumn.checkTextLength(minTextLength: 1, maxTextLength: 30),
       type: DriftSqlType.string,
-      requiredDuringInsert: true);
+      requiredDuringInsert: true,
+      defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'));
   @override
   List<GeneratedColumn> get $columns => [id, name];
   @override

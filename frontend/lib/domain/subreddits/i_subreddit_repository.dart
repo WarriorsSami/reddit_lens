@@ -4,11 +4,9 @@ import 'package:reddit_lens/domain/subreddits/subreddit_entity.dart';
 import 'package:reddit_lens/domain/core/application_failure.dart';
 
 abstract class ISubredditRepository {
-  Future<Unit> create(SubredditEntity entity);
+  Future<Either<ApplicationFailure, Unit>> create(SubredditEntity entity);
 
-  Future<Unit> delete(SubredditEntity entity);
-
-  Future<Unit> update(SubredditEntity entity);
+  Future<Either<ApplicationFailure, Unit>> delete(SubredditEntity entity);
 
   Stream<Either<ApplicationFailure, KtList<SubredditEntity>>> watchAll();
 

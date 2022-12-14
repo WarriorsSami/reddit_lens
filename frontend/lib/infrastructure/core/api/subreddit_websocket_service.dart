@@ -1,11 +1,10 @@
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
+import 'package:reddit_lens/di/config.dart';
 import 'package:reddit_lens/domain/comments/comment_entity.dart';
+import 'package:reddit_lens/domain/core/i_subreddit_websocket_service.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-
-import '../../../domain/core/i_subreddit_websocket_service.dart';
-import '../config.dart';
 
 @Injectable(as: ISubredditWebsocketService)
 class SubredditWebsocketService implements ISubredditWebsocketService {

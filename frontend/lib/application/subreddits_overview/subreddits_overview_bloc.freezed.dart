@@ -18,51 +18,60 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SubredditsOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String subreddit) subredditAdded,
+    required TResult Function() subredditsRetrieved,
     required TResult Function(String subreddit) subredditRemoved,
     required TResult Function(String subreddit) subredditSelected,
+    required TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)
+        subredditReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String subreddit)? subredditAdded,
+    TResult? Function()? subredditsRetrieved,
     TResult? Function(String subreddit)? subredditRemoved,
     TResult? Function(String subreddit)? subredditSelected,
+    TResult? Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String subreddit)? subredditAdded,
+    TResult Function()? subredditsRetrieved,
     TResult Function(String subreddit)? subredditRemoved,
     TResult Function(String subreddit)? subredditSelected,
+    TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_SubredditAdded value) subredditAdded,
+    required TResult Function(_SubredditsRetrieved value) subredditsRetrieved,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
     required TResult Function(_SubredditSelected value) subredditSelected,
+    required TResult Function(_SubredditReceived value) subredditReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_SubredditAdded value)? subredditAdded,
+    TResult? Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
     TResult? Function(_SubredditSelected value)? subredditSelected,
+    TResult? Function(_SubredditReceived value)? subredditReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_SubredditAdded value)? subredditAdded,
+    TResult Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
     TResult Function(_SubredditSelected value)? subredditSelected,
+    TResult Function(_SubredditReceived value)? subredditReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,34 +97,35 @@ class _$SubredditsOverviewEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$_SubredditsRetrievedCopyWith<$Res> {
+  factory _$$_SubredditsRetrievedCopyWith(_$_SubredditsRetrieved value,
+          $Res Function(_$_SubredditsRetrieved) then) =
+      __$$_SubredditsRetrievedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$SubredditsOverviewEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+class __$$_SubredditsRetrievedCopyWithImpl<$Res>
+    extends _$SubredditsOverviewEventCopyWithImpl<$Res, _$_SubredditsRetrieved>
+    implements _$$_SubredditsRetrievedCopyWith<$Res> {
+  __$$_SubredditsRetrievedCopyWithImpl(_$_SubredditsRetrieved _value,
+      $Res Function(_$_SubredditsRetrieved) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_SubredditsRetrieved implements _SubredditsRetrieved {
+  const _$_SubredditsRetrieved();
 
   @override
   String toString() {
-    return 'SubredditsOverviewEvent.started()';
+    return 'SubredditsOverviewEvent.subredditsRetrieved()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType && other is _$_SubredditsRetrieved);
   }
 
   @override
@@ -124,36 +134,45 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String subreddit) subredditAdded,
+    required TResult Function() subredditsRetrieved,
     required TResult Function(String subreddit) subredditRemoved,
     required TResult Function(String subreddit) subredditSelected,
+    required TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)
+        subredditReceived,
   }) {
-    return started();
+    return subredditsRetrieved();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String subreddit)? subredditAdded,
+    TResult? Function()? subredditsRetrieved,
     TResult? Function(String subreddit)? subredditRemoved,
     TResult? Function(String subreddit)? subredditSelected,
+    TResult? Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
   }) {
-    return started?.call();
+    return subredditsRetrieved?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String subreddit)? subredditAdded,
+    TResult Function()? subredditsRetrieved,
     TResult Function(String subreddit)? subredditRemoved,
     TResult Function(String subreddit)? subredditSelected,
+    TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (subredditsRetrieved != null) {
+      return subredditsRetrieved();
     }
     return orElse();
   }
@@ -161,189 +180,43 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_SubredditAdded value) subredditAdded,
+    required TResult Function(_SubredditsRetrieved value) subredditsRetrieved,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
     required TResult Function(_SubredditSelected value) subredditSelected,
+    required TResult Function(_SubredditReceived value) subredditReceived,
   }) {
-    return started(this);
+    return subredditsRetrieved(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_SubredditAdded value)? subredditAdded,
+    TResult? Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
     TResult? Function(_SubredditSelected value)? subredditSelected,
+    TResult? Function(_SubredditReceived value)? subredditReceived,
   }) {
-    return started?.call(this);
+    return subredditsRetrieved?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_SubredditAdded value)? subredditAdded,
+    TResult Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
     TResult Function(_SubredditSelected value)? subredditSelected,
+    TResult Function(_SubredditReceived value)? subredditReceived,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (subredditsRetrieved != null) {
+      return subredditsRetrieved(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements SubredditsOverviewEvent {
-  const factory _Started() = _$_Started;
-}
-
-/// @nodoc
-abstract class _$$_SubredditAddedCopyWith<$Res> {
-  factory _$$_SubredditAddedCopyWith(
-          _$_SubredditAdded value, $Res Function(_$_SubredditAdded) then) =
-      __$$_SubredditAddedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String subreddit});
-}
-
-/// @nodoc
-class __$$_SubredditAddedCopyWithImpl<$Res>
-    extends _$SubredditsOverviewEventCopyWithImpl<$Res, _$_SubredditAdded>
-    implements _$$_SubredditAddedCopyWith<$Res> {
-  __$$_SubredditAddedCopyWithImpl(
-      _$_SubredditAdded _value, $Res Function(_$_SubredditAdded) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? subreddit = null,
-  }) {
-    return _then(_$_SubredditAdded(
-      null == subreddit
-          ? _value.subreddit
-          : subreddit // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SubredditAdded implements _SubredditAdded {
-  const _$_SubredditAdded(this.subreddit);
-
-  @override
-  final String subreddit;
-
-  @override
-  String toString() {
-    return 'SubredditsOverviewEvent.subredditAdded(subreddit: $subreddit)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SubredditAdded &&
-            (identical(other.subreddit, subreddit) ||
-                other.subreddit == subreddit));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, subreddit);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_SubredditAddedCopyWith<_$_SubredditAdded> get copyWith =>
-      __$$_SubredditAddedCopyWithImpl<_$_SubredditAdded>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String subreddit) subredditAdded,
-    required TResult Function(String subreddit) subredditRemoved,
-    required TResult Function(String subreddit) subredditSelected,
-  }) {
-    return subredditAdded(subreddit);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String subreddit)? subredditAdded,
-    TResult? Function(String subreddit)? subredditRemoved,
-    TResult? Function(String subreddit)? subredditSelected,
-  }) {
-    return subredditAdded?.call(subreddit);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String subreddit)? subredditAdded,
-    TResult Function(String subreddit)? subredditRemoved,
-    TResult Function(String subreddit)? subredditSelected,
-    required TResult orElse(),
-  }) {
-    if (subredditAdded != null) {
-      return subredditAdded(subreddit);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_SubredditAdded value) subredditAdded,
-    required TResult Function(_SubredditRemoved value) subredditRemoved,
-    required TResult Function(_SubredditSelected value) subredditSelected,
-  }) {
-    return subredditAdded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_SubredditAdded value)? subredditAdded,
-    TResult? Function(_SubredditRemoved value)? subredditRemoved,
-    TResult? Function(_SubredditSelected value)? subredditSelected,
-  }) {
-    return subredditAdded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_SubredditAdded value)? subredditAdded,
-    TResult Function(_SubredditRemoved value)? subredditRemoved,
-    TResult Function(_SubredditSelected value)? subredditSelected,
-    required TResult orElse(),
-  }) {
-    if (subredditAdded != null) {
-      return subredditAdded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SubredditAdded implements SubredditsOverviewEvent {
-  const factory _SubredditAdded(final String subreddit) = _$_SubredditAdded;
-
-  String get subreddit;
-  @JsonKey(ignore: true)
-  _$$_SubredditAddedCopyWith<_$_SubredditAdded> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _SubredditsRetrieved implements SubredditsOverviewEvent {
+  const factory _SubredditsRetrieved() = _$_SubredditsRetrieved;
 }
 
 /// @nodoc
@@ -411,10 +284,13 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String subreddit) subredditAdded,
+    required TResult Function() subredditsRetrieved,
     required TResult Function(String subreddit) subredditRemoved,
     required TResult Function(String subreddit) subredditSelected,
+    required TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)
+        subredditReceived,
   }) {
     return subredditRemoved(subreddit);
   }
@@ -422,10 +298,13 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String subreddit)? subredditAdded,
+    TResult? Function()? subredditsRetrieved,
     TResult? Function(String subreddit)? subredditRemoved,
     TResult? Function(String subreddit)? subredditSelected,
+    TResult? Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
   }) {
     return subredditRemoved?.call(subreddit);
   }
@@ -433,10 +312,13 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String subreddit)? subredditAdded,
+    TResult Function()? subredditsRetrieved,
     TResult Function(String subreddit)? subredditRemoved,
     TResult Function(String subreddit)? subredditSelected,
+    TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
     required TResult orElse(),
   }) {
     if (subredditRemoved != null) {
@@ -448,10 +330,10 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_SubredditAdded value) subredditAdded,
+    required TResult Function(_SubredditsRetrieved value) subredditsRetrieved,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
     required TResult Function(_SubredditSelected value) subredditSelected,
+    required TResult Function(_SubredditReceived value) subredditReceived,
   }) {
     return subredditRemoved(this);
   }
@@ -459,10 +341,10 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_SubredditAdded value)? subredditAdded,
+    TResult? Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
     TResult? Function(_SubredditSelected value)? subredditSelected,
+    TResult? Function(_SubredditReceived value)? subredditReceived,
   }) {
     return subredditRemoved?.call(this);
   }
@@ -470,10 +352,10 @@ class _$_SubredditRemoved implements _SubredditRemoved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_SubredditAdded value)? subredditAdded,
+    TResult Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
     TResult Function(_SubredditSelected value)? subredditSelected,
+    TResult Function(_SubredditReceived value)? subredditReceived,
     required TResult orElse(),
   }) {
     if (subredditRemoved != null) {
@@ -558,10 +440,13 @@ class _$_SubredditSelected implements _SubredditSelected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String subreddit) subredditAdded,
+    required TResult Function() subredditsRetrieved,
     required TResult Function(String subreddit) subredditRemoved,
     required TResult Function(String subreddit) subredditSelected,
+    required TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)
+        subredditReceived,
   }) {
     return subredditSelected(subreddit);
   }
@@ -569,10 +454,13 @@ class _$_SubredditSelected implements _SubredditSelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String subreddit)? subredditAdded,
+    TResult? Function()? subredditsRetrieved,
     TResult? Function(String subreddit)? subredditRemoved,
     TResult? Function(String subreddit)? subredditSelected,
+    TResult? Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
   }) {
     return subredditSelected?.call(subreddit);
   }
@@ -580,10 +468,13 @@ class _$_SubredditSelected implements _SubredditSelected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String subreddit)? subredditAdded,
+    TResult Function()? subredditsRetrieved,
     TResult Function(String subreddit)? subredditRemoved,
     TResult Function(String subreddit)? subredditSelected,
+    TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
     required TResult orElse(),
   }) {
     if (subredditSelected != null) {
@@ -595,10 +486,10 @@ class _$_SubredditSelected implements _SubredditSelected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_SubredditAdded value) subredditAdded,
+    required TResult Function(_SubredditsRetrieved value) subredditsRetrieved,
     required TResult Function(_SubredditRemoved value) subredditRemoved,
     required TResult Function(_SubredditSelected value) subredditSelected,
+    required TResult Function(_SubredditReceived value) subredditReceived,
   }) {
     return subredditSelected(this);
   }
@@ -606,10 +497,10 @@ class _$_SubredditSelected implements _SubredditSelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_SubredditAdded value)? subredditAdded,
+    TResult? Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult? Function(_SubredditRemoved value)? subredditRemoved,
     TResult? Function(_SubredditSelected value)? subredditSelected,
+    TResult? Function(_SubredditReceived value)? subredditReceived,
   }) {
     return subredditSelected?.call(this);
   }
@@ -617,10 +508,10 @@ class _$_SubredditSelected implements _SubredditSelected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_SubredditAdded value)? subredditAdded,
+    TResult Function(_SubredditsRetrieved value)? subredditsRetrieved,
     TResult Function(_SubredditRemoved value)? subredditRemoved,
     TResult Function(_SubredditSelected value)? subredditSelected,
+    TResult Function(_SubredditReceived value)? subredditReceived,
     required TResult orElse(),
   }) {
     if (subredditSelected != null) {
@@ -637,6 +528,166 @@ abstract class _SubredditSelected implements SubredditsOverviewEvent {
   String get subreddit;
   @JsonKey(ignore: true)
   _$$_SubredditSelectedCopyWith<_$_SubredditSelected> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SubredditReceivedCopyWith<$Res> {
+  factory _$$_SubredditReceivedCopyWith(_$_SubredditReceived value,
+          $Res Function(_$_SubredditReceived) then) =
+      __$$_SubredditReceivedCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {Either<ApplicationFailure, KtList<SubredditEntity>>
+          failureOrSubreddits});
+}
+
+/// @nodoc
+class __$$_SubredditReceivedCopyWithImpl<$Res>
+    extends _$SubredditsOverviewEventCopyWithImpl<$Res, _$_SubredditReceived>
+    implements _$$_SubredditReceivedCopyWith<$Res> {
+  __$$_SubredditReceivedCopyWithImpl(
+      _$_SubredditReceived _value, $Res Function(_$_SubredditReceived) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failureOrSubreddits = null,
+  }) {
+    return _then(_$_SubredditReceived(
+      null == failureOrSubreddits
+          ? _value.failureOrSubreddits
+          : failureOrSubreddits // ignore: cast_nullable_to_non_nullable
+              as Either<ApplicationFailure, KtList<SubredditEntity>>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SubredditReceived implements _SubredditReceived {
+  const _$_SubredditReceived(this.failureOrSubreddits);
+
+  @override
+  final Either<ApplicationFailure, KtList<SubredditEntity>> failureOrSubreddits;
+
+  @override
+  String toString() {
+    return 'SubredditsOverviewEvent.subredditReceived(failureOrSubreddits: $failureOrSubreddits)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SubredditReceived &&
+            (identical(other.failureOrSubreddits, failureOrSubreddits) ||
+                other.failureOrSubreddits == failureOrSubreddits));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failureOrSubreddits);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SubredditReceivedCopyWith<_$_SubredditReceived> get copyWith =>
+      __$$_SubredditReceivedCopyWithImpl<_$_SubredditReceived>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() subredditsRetrieved,
+    required TResult Function(String subreddit) subredditRemoved,
+    required TResult Function(String subreddit) subredditSelected,
+    required TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)
+        subredditReceived,
+  }) {
+    return subredditReceived(failureOrSubreddits);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? subredditsRetrieved,
+    TResult? Function(String subreddit)? subredditRemoved,
+    TResult? Function(String subreddit)? subredditSelected,
+    TResult? Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
+  }) {
+    return subredditReceived?.call(failureOrSubreddits);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? subredditsRetrieved,
+    TResult Function(String subreddit)? subredditRemoved,
+    TResult Function(String subreddit)? subredditSelected,
+    TResult Function(
+            Either<ApplicationFailure, KtList<SubredditEntity>>
+                failureOrSubreddits)?
+        subredditReceived,
+    required TResult orElse(),
+  }) {
+    if (subredditReceived != null) {
+      return subredditReceived(failureOrSubreddits);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SubredditsRetrieved value) subredditsRetrieved,
+    required TResult Function(_SubredditRemoved value) subredditRemoved,
+    required TResult Function(_SubredditSelected value) subredditSelected,
+    required TResult Function(_SubredditReceived value) subredditReceived,
+  }) {
+    return subredditReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SubredditsRetrieved value)? subredditsRetrieved,
+    TResult? Function(_SubredditRemoved value)? subredditRemoved,
+    TResult? Function(_SubredditSelected value)? subredditSelected,
+    TResult? Function(_SubredditReceived value)? subredditReceived,
+  }) {
+    return subredditReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SubredditsRetrieved value)? subredditsRetrieved,
+    TResult Function(_SubredditRemoved value)? subredditRemoved,
+    TResult Function(_SubredditSelected value)? subredditSelected,
+    TResult Function(_SubredditReceived value)? subredditReceived,
+    required TResult orElse(),
+  }) {
+    if (subredditReceived != null) {
+      return subredditReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SubredditReceived implements SubredditsOverviewEvent {
+  const factory _SubredditReceived(
+      final Either<ApplicationFailure, KtList<SubredditEntity>>
+          failureOrSubreddits) = _$_SubredditReceived;
+
+  Either<ApplicationFailure, KtList<SubredditEntity>> get failureOrSubreddits;
+  @JsonKey(ignore: true)
+  _$$_SubredditReceivedCopyWith<_$_SubredditReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

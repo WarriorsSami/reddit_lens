@@ -10,7 +10,7 @@ class SubredditsOverviewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SubredditsOverviewBloc, SubredditsOverviewState>(
-      builder: (context, state) => state.maybeMap(
+      builder: (context, state) => state.map(
         initial: (_) => Container(),
         loadInProgress: (state) => const Center(
           child: CircularProgressIndicator(),
@@ -63,7 +63,23 @@ class SubredditsOverviewBody extends StatelessWidget {
             },
           ),
         ),
-        orElse: () => Container(),
+        loadFailure: (state) => Center(
+          child: Text(
+            state.subredditFailure.map(
+              infrastructureFailure: (_) => 'Infrastructure Failure',
+              httpFailure: (_) => 'Http Failure',
+            ),
+          ),
+        ),
+        loadServer: (state) => Center(
+          child: Text(
+            'Server: ${state.subreddit}',
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
     );
   }

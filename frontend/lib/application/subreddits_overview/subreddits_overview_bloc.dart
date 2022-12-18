@@ -33,6 +33,7 @@ class SubredditsOverviewBloc
     on<SubredditsOverviewEvent>((event, emit) async {
       await event.map(
         subredditsRetrieved: (e) async {
+          emit(const SubredditsOverviewState.loadInProgress());
           await _subredditStreamSubscription?.cancel();
           _subredditStreamSubscription = _subredditRepository.watchAll().listen(
                 (failureOrSubreddits) => add(
@@ -69,7 +70,9 @@ class SubredditsOverviewBloc
             (failure) => emit(SubredditsOverviewState.loadFailure(failure)),
             (server) => emit(SubredditsOverviewState.loadServer(e.subreddit)),
           );
-          add(const SubredditsOverviewEvent.subredditsRetrieved());
+          if (response.isLeft()) {
+            add(const SubredditsOverviewEvent.subredditsRetrieved());
+          }
         },
       );
     });

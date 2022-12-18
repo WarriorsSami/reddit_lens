@@ -24,6 +24,9 @@ class SubredditsOverviewPage extends StatelessWidget {
               AutoRouter.of(context).push(
                 SubredditDashboardPageRoute(subredditName: state.subreddit),
               );
+              BlocProvider.of<SubredditsOverviewBloc>(context).add(
+                const SubredditsOverviewEvent.subredditsRetrieved(),
+              );
             },
             loadFailure: (state) {
               FlushbarHelper.createError(

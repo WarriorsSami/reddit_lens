@@ -16,42 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SubredditDashboardEvent {
-  String get subreddit => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() commentsRequested,
     required TResult Function(String subreddit) subredditUnselected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? commentsRequested,
     TResult? Function(String subreddit)? subredditUnselected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? commentsRequested,
     TResult Function(String subreddit)? subredditUnselected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsRequested value) commentsRequested,
     required TResult Function(_SubredditUnselected value) subredditUnselected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsRequested value)? commentsRequested,
     TResult? Function(_SubredditUnselected value)? subredditUnselected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsRequested value)? commentsRequested,
     TResult Function(_SubredditUnselected value)? subredditUnselected,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SubredditDashboardEventCopyWith<SubredditDashboardEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +61,6 @@ abstract class $SubredditDashboardEventCopyWith<$Res> {
   factory $SubredditDashboardEventCopyWith(SubredditDashboardEvent value,
           $Res Function(SubredditDashboardEvent) then) =
       _$SubredditDashboardEventCopyWithImpl<$Res, SubredditDashboardEvent>;
-  @useResult
-  $Res call({String subreddit});
 }
 
 /// @nodoc
@@ -74,28 +73,115 @@ class _$SubredditDashboardEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? subreddit = null,
-  }) {
-    return _then(_value.copyWith(
-      subreddit: null == subreddit
-          ? _value.subreddit
-          : subreddit // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$_SubredditUnselectedCopyWith<$Res>
-    implements $SubredditDashboardEventCopyWith<$Res> {
+abstract class _$$_CommentsRequestedCopyWith<$Res> {
+  factory _$$_CommentsRequestedCopyWith(_$_CommentsRequested value,
+          $Res Function(_$_CommentsRequested) then) =
+      __$$_CommentsRequestedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_CommentsRequestedCopyWithImpl<$Res>
+    extends _$SubredditDashboardEventCopyWithImpl<$Res, _$_CommentsRequested>
+    implements _$$_CommentsRequestedCopyWith<$Res> {
+  __$$_CommentsRequestedCopyWithImpl(
+      _$_CommentsRequested _value, $Res Function(_$_CommentsRequested) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_CommentsRequested implements _CommentsRequested {
+  const _$_CommentsRequested();
+
+  @override
+  String toString() {
+    return 'SubredditDashboardEvent.commentsRequested()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_CommentsRequested);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() commentsRequested,
+    required TResult Function(String subreddit) subredditUnselected,
+  }) {
+    return commentsRequested();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? commentsRequested,
+    TResult? Function(String subreddit)? subredditUnselected,
+  }) {
+    return commentsRequested?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? commentsRequested,
+    TResult Function(String subreddit)? subredditUnselected,
+    required TResult orElse(),
+  }) {
+    if (commentsRequested != null) {
+      return commentsRequested();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsRequested value) commentsRequested,
+    required TResult Function(_SubredditUnselected value) subredditUnselected,
+  }) {
+    return commentsRequested(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsRequested value)? commentsRequested,
+    TResult? Function(_SubredditUnselected value)? subredditUnselected,
+  }) {
+    return commentsRequested?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsRequested value)? commentsRequested,
+    TResult Function(_SubredditUnselected value)? subredditUnselected,
+    required TResult orElse(),
+  }) {
+    if (commentsRequested != null) {
+      return commentsRequested(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CommentsRequested implements SubredditDashboardEvent {
+  const factory _CommentsRequested() = _$_CommentsRequested;
+}
+
+/// @nodoc
+abstract class _$$_SubredditUnselectedCopyWith<$Res> {
   factory _$$_SubredditUnselectedCopyWith(_$_SubredditUnselected value,
           $Res Function(_$_SubredditUnselected) then) =
       __$$_SubredditUnselectedCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String subreddit});
 }
@@ -157,6 +243,7 @@ class _$_SubredditUnselected implements _SubredditUnselected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() commentsRequested,
     required TResult Function(String subreddit) subredditUnselected,
   }) {
     return subredditUnselected(subreddit);
@@ -165,6 +252,7 @@ class _$_SubredditUnselected implements _SubredditUnselected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? commentsRequested,
     TResult? Function(String subreddit)? subredditUnselected,
   }) {
     return subredditUnselected?.call(subreddit);
@@ -173,6 +261,7 @@ class _$_SubredditUnselected implements _SubredditUnselected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? commentsRequested,
     TResult Function(String subreddit)? subredditUnselected,
     required TResult orElse(),
   }) {
@@ -185,6 +274,7 @@ class _$_SubredditUnselected implements _SubredditUnselected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsRequested value) commentsRequested,
     required TResult Function(_SubredditUnselected value) subredditUnselected,
   }) {
     return subredditUnselected(this);
@@ -193,6 +283,7 @@ class _$_SubredditUnselected implements _SubredditUnselected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsRequested value)? commentsRequested,
     TResult? Function(_SubredditUnselected value)? subredditUnselected,
   }) {
     return subredditUnselected?.call(this);
@@ -201,6 +292,7 @@ class _$_SubredditUnselected implements _SubredditUnselected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsRequested value)? commentsRequested,
     TResult Function(_SubredditUnselected value)? subredditUnselected,
     required TResult orElse(),
   }) {
@@ -215,9 +307,7 @@ abstract class _SubredditUnselected implements SubredditDashboardEvent {
   const factory _SubredditUnselected(final String subreddit) =
       _$_SubredditUnselected;
 
-  @override
   String get subreddit;
-  @override
   @JsonKey(ignore: true)
   _$$_SubredditUnselectedCopyWith<_$_SubredditUnselected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -229,7 +319,7 @@ mixin _$SubredditDashboardState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<CommentEntity> subredditComments)
+    required TResult Function(Stream<CommentEntity> subredditComments)
         loadSuccess,
     required TResult Function(ApplicationFailure subredditFailure) loadFailure,
     required TResult Function() unloadServer,
@@ -239,7 +329,7 @@ mixin _$SubredditDashboardState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult? Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult? Function()? unloadServer,
   }) =>
@@ -248,7 +338,7 @@ mixin _$SubredditDashboardState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult Function()? unloadServer,
     required TResult orElse(),
@@ -342,7 +432,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<CommentEntity> subredditComments)
+    required TResult Function(Stream<CommentEntity> subredditComments)
         loadSuccess,
     required TResult Function(ApplicationFailure subredditFailure) loadFailure,
     required TResult Function() unloadServer,
@@ -355,7 +445,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult? Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult? Function()? unloadServer,
   }) {
@@ -367,7 +457,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult Function()? unloadServer,
     required TResult orElse(),
@@ -463,7 +553,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<CommentEntity> subredditComments)
+    required TResult Function(Stream<CommentEntity> subredditComments)
         loadSuccess,
     required TResult Function(ApplicationFailure subredditFailure) loadFailure,
     required TResult Function() unloadServer,
@@ -476,7 +566,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult? Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult? Function()? unloadServer,
   }) {
@@ -488,7 +578,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult Function()? unloadServer,
     required TResult orElse(),
@@ -550,7 +640,7 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({KtList<CommentEntity> subredditComments});
+  $Res call({Stream<CommentEntity> subredditComments});
 }
 
 /// @nodoc
@@ -570,7 +660,7 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
       null == subredditComments
           ? _value.subredditComments
           : subredditComments // ignore: cast_nullable_to_non_nullable
-              as KtList<CommentEntity>,
+              as Stream<CommentEntity>,
     ));
   }
 }
@@ -581,7 +671,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.subredditComments);
 
   @override
-  final KtList<CommentEntity> subredditComments;
+  final Stream<CommentEntity> subredditComments;
 
   @override
   String toString() {
@@ -611,7 +701,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<CommentEntity> subredditComments)
+    required TResult Function(Stream<CommentEntity> subredditComments)
         loadSuccess,
     required TResult Function(ApplicationFailure subredditFailure) loadFailure,
     required TResult Function() unloadServer,
@@ -624,7 +714,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult? Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult? Function()? unloadServer,
   }) {
@@ -636,7 +726,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult Function()? unloadServer,
     required TResult orElse(),
@@ -689,10 +779,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements SubredditDashboardState {
-  const factory _LoadSuccess(final KtList<CommentEntity> subredditComments) =
+  const factory _LoadSuccess(final Stream<CommentEntity> subredditComments) =
       _$_LoadSuccess;
 
-  KtList<CommentEntity> get subredditComments;
+  Stream<CommentEntity> get subredditComments;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -775,7 +865,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<CommentEntity> subredditComments)
+    required TResult Function(Stream<CommentEntity> subredditComments)
         loadSuccess,
     required TResult Function(ApplicationFailure subredditFailure) loadFailure,
     required TResult Function() unloadServer,
@@ -788,7 +878,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult? Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult? Function()? unloadServer,
   }) {
@@ -800,7 +890,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult Function()? unloadServer,
     required TResult orElse(),
@@ -902,7 +992,7 @@ class _$_UnloadServer implements _UnloadServer {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<CommentEntity> subredditComments)
+    required TResult Function(Stream<CommentEntity> subredditComments)
         loadSuccess,
     required TResult Function(ApplicationFailure subredditFailure) loadFailure,
     required TResult Function() unloadServer,
@@ -915,7 +1005,7 @@ class _$_UnloadServer implements _UnloadServer {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult? Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult? Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult? Function()? unloadServer,
   }) {
@@ -927,7 +1017,7 @@ class _$_UnloadServer implements _UnloadServer {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<CommentEntity> subredditComments)? loadSuccess,
+    TResult Function(Stream<CommentEntity> subredditComments)? loadSuccess,
     TResult Function(ApplicationFailure subredditFailure)? loadFailure,
     TResult Function()? unloadServer,
     required TResult orElse(),

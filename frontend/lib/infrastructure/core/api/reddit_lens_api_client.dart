@@ -4,17 +4,14 @@ import 'package:injectable/injectable.dart';
 import 'package:reddit_lens/di/config.dart';
 import 'package:reddit_lens/domain/core/application_failure.dart';
 import 'package:reddit_lens/domain/core/i_reddit_lens_api_client.dart';
-import 'package:reddit_lens/domain/core/i_subreddit_websocket_service.dart';
 import 'package:reddit_lens/infrastructure/core/api/subreddit_server_service.dart';
 
 @Injectable(as: IRedditLensApiClient)
 class RedditLensApiClient implements IRedditLensApiClient {
   final ChopperClient _httpClient;
-  final ISubredditWebsocketService _wsClient;
 
   RedditLensApiClient(
     this._httpClient,
-    this._wsClient,
   );
 
   @override

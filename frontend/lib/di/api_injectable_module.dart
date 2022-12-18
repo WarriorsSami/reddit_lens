@@ -1,6 +1,7 @@
 import 'package:chopper/chopper.dart';
 import 'package:injectable/injectable.dart';
 import 'package:reddit_lens/infrastructure/core/api/subreddit_server_service.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
 import 'config.dart';
 
@@ -13,5 +14,10 @@ abstract class ApiInjectableModule {
           SubredditServerService.create(),
         ],
         converter: const JsonConverter(),
+      );
+
+  @lazySingleton
+  WebSocketChannel get wsClient => WebSocketChannel.connect(
+        Uri.parse(Config.wsBaseUrl),
       );
 }

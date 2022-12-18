@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reddit_lens/application/subreddit_form/subreddit_form_bloc.dart';
 import 'package:reddit_lens/di/injection.dart';
+import 'package:reddit_lens/presentation/routes/app_router.gr.dart';
 import 'package:reddit_lens/presentation/subreddits/subreddit_form/widgets/subreddit_form_body_widget.dart';
 
 class SubredditFormPage extends StatelessWidget {
@@ -16,7 +17,8 @@ class SubredditFormPage extends StatelessWidget {
         listener: (context, state) {
           state.maybeMap(
             savedSuccessfully: (state) {
-              AutoRouter.of(context).pop();
+              AutoRouter.of(context)
+                  .popUntilRouteWithName(SubredditsOverviewPageRoute.name);
             },
             orElse: () {},
           );

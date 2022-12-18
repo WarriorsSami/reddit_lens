@@ -18,14 +18,16 @@ class SubredditDashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<SubredditDashboardBloc>(
-      create: (context) => getIt<SubredditDashboardBloc>(),
+      create: (context) => getIt<SubredditDashboardBloc>()
+        ..add(
+          const SubredditDashboardEvent.commentsRequested(),
+        ),
       child: BlocConsumer<SubredditDashboardBloc, SubredditDashboardState>(
         listener: (context, state) {
           state.maybeMap(
             unloadServer: (state) {
-              AutoRouter.of(context).push(
-                const SubredditsOverviewPageRoute(),
-              );
+              AutoRouter.of(context)
+                  .popUntilRouteWithName(SubredditsOverviewPageRoute.name);
             },
             loadFailure: (state) {
               FlushbarHelper.createError(
@@ -43,7 +45,7 @@ class SubredditDashboardPage extends StatelessWidget {
         },
         builder: (context, state) => Scaffold(
           appBar: AppBar(
-            title: const Text('Reddit Lens'),
+            title: Text('r/$subredditName'),
             leading: BackButton(
               onPressed: () {
                 context.read<SubredditDashboardBloc>().add(

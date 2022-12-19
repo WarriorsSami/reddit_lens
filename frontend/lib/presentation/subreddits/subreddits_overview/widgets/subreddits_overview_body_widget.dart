@@ -73,7 +73,7 @@ class SubredditsOverviewBody extends StatelessWidget {
         ),
         loadServer: (state) => Center(
           child: Text(
-            'Server: ${state.subreddit}',
+            'Server started for subreddit: r/${state.subreddit}',
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

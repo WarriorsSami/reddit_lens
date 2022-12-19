@@ -25,11 +25,11 @@ class SubredditDashboardBloc
       await event.map(
         commentsRequested: (e) async {
           emit(const SubredditDashboardState.loadInProgress());
-          final commentsStream = _rlWsClient.getSubredditPosts();
-          emit(SubredditDashboardState.loadSuccess(commentsStream));
+          await Future.delayed(const Duration(seconds: 3));
+          final commentStream = _rlWsClient.getSubredditCommentStream();
+          emit(SubredditDashboardState.loadSuccess(commentStream));
         },
         subredditUnselected: (e) async {
-          _rlWsClient.close();
           (await _rlApiClient.stopSubredditServer(e.subreddit)).fold(
             (f) => emit(SubredditDashboardState.loadFailure(f)),
             (_) => emit(const SubredditDashboardState.unloadServer()),

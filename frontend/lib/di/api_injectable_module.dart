@@ -15,9 +15,4 @@ abstract class ApiInjectableModule {
         ],
         converter: const JsonConverter(),
       );
-
-  @lazySingleton
-  WebSocketChannel get wsClient => WebSocketChannel.connect(
-        Uri.parse(Config.wsBaseUrl),
-      );
 }

@@ -1,8 +1,5 @@
-import 'package:dartz/dartz.dart';
-
-import '../comments/comment_entity.dart';
+import 'package:reddit_lens/domain/comments/comment_entity.dart';
 
 abstract class ISubredditWebsocketService {
-  Stream<CommentEntity> getSubredditPosts();
-  Future<Unit> close();
+  Stream<CommentEntity> getSubredditCommentStream();
 }

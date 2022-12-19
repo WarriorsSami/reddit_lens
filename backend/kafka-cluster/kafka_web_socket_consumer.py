@@ -6,6 +6,8 @@ import os
 import websockets
 from kafka import KafkaConsumer
 
+from backend.reddit_lens_model import RedditLensModel
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--subreddit", help="subreddit to consume from")
@@ -27,11 +29,23 @@ if __name__ == '__main__':
         value_deserializer=lambda x: json.loads(x.decode('utf-8'))
     )
 
+    model = RedditLensModel()
+
     async def handle_kafka(websocket):
         for message in consumer:
             message = message.value
-            print(f"(Topic: {SUBREDDIT}) Consumed comment (websocket consumer): {message['author']}")
-            await websocket.send(json.dumps(message))
+            print(f"(Topic: {SUBREDDIT}) Consumed comment (websocket consumer): {message['author']} "
+                  f"- predicted as {model.predict(message)}")
+
+            message = {
+                "author": message["author"],
+                "link_id": message["link_id"],
+                "body": message["body"],
+                "predicted": model.predict(message)[0],
+            }
+            message = json.dumps(message)
+
+            await websocket.send(message)
 
     start_server = websockets.serve(handle_kafka, WEB_SOCKET_HOST, WEB_SOCKET_PORT)
     print(f"Websocket server started at {WEB_SOCKET_HOST}:{WEB_SOCKET_PORT}")

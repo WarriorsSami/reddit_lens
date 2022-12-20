@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reddit_lens/domain/comments/comment_entity.dart';
-import 'package:reddit_lens/domain/core/user_type.dart';
+import 'package:reddit_lens/domain/comments/user_type.dart';
 
 class CommentTile extends StatelessWidget {
   final CommentEntity comment;
@@ -32,11 +32,11 @@ class CommentTile extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                userTypeNameColorPairs[UserType.troll]!.value1,
+                userTypeNameColorPairs[comment.userType]!.value1,
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: userTypeNameColorPairs[UserType.troll]?.value2,
+                  color: userTypeNameColorPairs[comment.userType]?.value2,
                 ),
               ),
             ],

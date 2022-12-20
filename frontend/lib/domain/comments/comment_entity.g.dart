@@ -11,6 +11,9 @@ _$_CommentEntity _$$_CommentEntityFromJson(Map<String, dynamic> json) =>
       author: json['author'] as String?,
       body: json['body'] as String?,
       linkId: json['link_id'] as String?,
+      userType: json['predicted'] == null
+          ? UserType.normal
+          : const UserTypeConverter().fromJson(json['predicted'] as String),
     );
 
 Map<String, dynamic> _$$_CommentEntityToJson(_$_CommentEntity instance) =>
@@ -18,4 +21,5 @@ Map<String, dynamic> _$$_CommentEntityToJson(_$_CommentEntity instance) =>
       'author': instance.author,
       'body': instance.body,
       'link_id': instance.linkId,
+      'predicted': const UserTypeConverter().toJson(instance.userType),
     };

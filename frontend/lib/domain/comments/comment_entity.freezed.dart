@@ -24,6 +24,9 @@ mixin _$CommentEntity {
   String? get body => throw _privateConstructorUsedError;
   @JsonKey(name: 'link_id')
   String? get linkId => throw _privateConstructorUsedError;
+  @UserTypeConverter()
+  @JsonKey(name: 'predicted')
+  UserType get userType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +41,10 @@ abstract class $CommentEntityCopyWith<$Res> {
       _$CommentEntityCopyWithImpl<$Res, CommentEntity>;
   @useResult
   $Res call(
-      {String? author, String? body, @JsonKey(name: 'link_id') String? linkId});
+      {String? author,
+      String? body,
+      @JsonKey(name: 'link_id') String? linkId,
+      @UserTypeConverter() @JsonKey(name: 'predicted') UserType userType});
 }
 
 /// @nodoc
@@ -57,6 +63,7 @@ class _$CommentEntityCopyWithImpl<$Res, $Val extends CommentEntity>
     Object? author = freezed,
     Object? body = freezed,
     Object? linkId = freezed,
+    Object? userType = null,
   }) {
     return _then(_value.copyWith(
       author: freezed == author
@@ -71,6 +78,10 @@ class _$CommentEntityCopyWithImpl<$Res, $Val extends CommentEntity>
           ? _value.linkId
           : linkId // ignore: cast_nullable_to_non_nullable
               as String?,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
     ) as $Val);
   }
 }
@@ -84,7 +95,10 @@ abstract class _$$_CommentEntityCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? author, String? body, @JsonKey(name: 'link_id') String? linkId});
+      {String? author,
+      String? body,
+      @JsonKey(name: 'link_id') String? linkId,
+      @UserTypeConverter() @JsonKey(name: 'predicted') UserType userType});
 }
 
 /// @nodoc
@@ -101,6 +115,7 @@ class __$$_CommentEntityCopyWithImpl<$Res>
     Object? author = freezed,
     Object? body = freezed,
     Object? linkId = freezed,
+    Object? userType = null,
   }) {
     return _then(_$_CommentEntity(
       author: freezed == author
@@ -115,6 +130,10 @@ class __$$_CommentEntityCopyWithImpl<$Res>
           ? _value.linkId
           : linkId // ignore: cast_nullable_to_non_nullable
               as String?,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
     ));
   }
 }
@@ -123,7 +142,13 @@ class __$$_CommentEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CommentEntity implements _CommentEntity {
   _$_CommentEntity(
-      {this.author, this.body, @JsonKey(name: 'link_id') this.linkId});
+      {this.author,
+      this.body,
+      @JsonKey(name: 'link_id')
+          this.linkId,
+      @UserTypeConverter()
+      @JsonKey(name: 'predicted')
+          this.userType = UserType.normal});
 
   factory _$_CommentEntity.fromJson(Map<String, dynamic> json) =>
       _$$_CommentEntityFromJson(json);
@@ -135,10 +160,14 @@ class _$_CommentEntity implements _CommentEntity {
   @override
   @JsonKey(name: 'link_id')
   final String? linkId;
+  @override
+  @UserTypeConverter()
+  @JsonKey(name: 'predicted')
+  final UserType userType;
 
   @override
   String toString() {
-    return 'CommentEntity(author: $author, body: $body, linkId: $linkId)';
+    return 'CommentEntity(author: $author, body: $body, linkId: $linkId, userType: $userType)';
   }
 
   @override
@@ -148,12 +177,14 @@ class _$_CommentEntity implements _CommentEntity {
             other is _$_CommentEntity &&
             (identical(other.author, author) || other.author == author) &&
             (identical(other.body, body) || other.body == body) &&
-            (identical(other.linkId, linkId) || other.linkId == linkId));
+            (identical(other.linkId, linkId) || other.linkId == linkId) &&
+            (identical(other.userType, userType) ||
+                other.userType == userType));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, author, body, linkId);
+  int get hashCode => Object.hash(runtimeType, author, body, linkId, userType);
 
   @JsonKey(ignore: true)
   @override
@@ -173,7 +204,11 @@ abstract class _CommentEntity implements CommentEntity {
   factory _CommentEntity(
       {final String? author,
       final String? body,
-      @JsonKey(name: 'link_id') final String? linkId}) = _$_CommentEntity;
+      @JsonKey(name: 'link_id')
+          final String? linkId,
+      @UserTypeConverter()
+      @JsonKey(name: 'predicted')
+          final UserType userType}) = _$_CommentEntity;
 
   factory _CommentEntity.fromJson(Map<String, dynamic> json) =
       _$_CommentEntity.fromJson;
@@ -185,6 +220,10 @@ abstract class _CommentEntity implements CommentEntity {
   @override
   @JsonKey(name: 'link_id')
   String? get linkId;
+  @override
+  @UserTypeConverter()
+  @JsonKey(name: 'predicted')
+  UserType get userType;
   @override
   @JsonKey(ignore: true)
   _$$_CommentEntityCopyWith<_$_CommentEntity> get copyWith =>
